@@ -7,7 +7,7 @@ attach:
 	sudo docker exec -it "${CONTAINER}" /bin/bash ; true
 
 start:
-	sudo docker run --rm -v ${PWD}:/pwd --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -d --name "${CONTAINER}" -i "${IMAGE}"
+	sudo docker run --rm -v $(folder):/pwd --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -d --name "${CONTAINER}" -i "${IMAGE}"
 
 stop:
 	sudo docker stop "${CONTAINER}"
